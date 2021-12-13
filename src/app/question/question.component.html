@@ -1,0 +1,22 @@
+<!-- <ng-container *ngIf="question">
+    <p>{{question.id}}.{{question.question}}</p>
+    <form #answer="ngForm">
+        <ol type="a">
+                <ng-container *ngFor="let option of question.options; let i = index">
+                    <input type="radio" class="form-check-input" name="option" 
+                        (change)="getAnswer($event)" [checked]="radioAnswers[i] == optiona.value"
+                        [checked]="radioAnswers[i] == i+1" [(ngModel)]="radioAnswers[i]" value={{i+1}} class="mr-4">
+                    <span style="display: inline-flex;"> 
+                        <li>
+                            {{option}}
+                        </li>
+                    </span> <br>
+                </ng-container>
+        </ol>
+    </form>
+</ng-container> -->
+
+<form #answer="ngForm">
+    <input class="form-check-input" type="radio" (change)="getAnswer($event)" value="1" #flex name="flexRadioDefault" [checked]="tset[0] == flex.value">
+    <input type="radio" class="form-check-input" (change)="getAnswer($event)" #flex1 name="flexRadioDefault" [checked]="tset[0] == flex1.value" value="2" class="mr-4">
+</form>
