@@ -17,9 +17,9 @@ export class ResultComponent implements OnInit {
   public correctAnswers: any;
   public count: number = 0;
   public view: boolean = false;
-  mainQes:IQuestions[] = []
+  mainQes: IQuestions[] = []
   public username: string = ""
-  review:string = ""
+  review: string = ""
   ngOnInit(): void {
     this.url.params.subscribe(res => {
       this.username = res.username;
@@ -28,8 +28,8 @@ export class ResultComponent implements OnInit {
         console.log(this.myAnswers);
         this._AS.getDefaultAnswers().subscribe(res => {
           this.correctAnswers = res
-          console.log("dfghjk",this.correctAnswers);
-          this._AS.getNoOfQuestions().subscribe(res=>this.mainQes = res)
+          console.log("dfghjk", this.correctAnswers);
+          this._AS.getNoOfQuestions().subscribe(res => this.mainQes = res)
           this.calculateResult()
         });
       });
@@ -50,18 +50,22 @@ export class ResultComponent implements OnInit {
     for (let key in this.correctAnswers)
       if (this.correctAnswers[key] == this.myAnswers[key])
         this.count++;
-    let percent = (this.count/9) * 100;
+    let percent = (this.count / 9) * 100;
     console.log(percent);
     if (this.count <= 3) {
-      this.progressStyle.width = percent + "%";
+      if (this.count == 0) {
+        this.progressStyle.width = "100%";
+      }
+      else
+        this.progressStyle.width = percent + "%";
       this.review = "LONG WAY TO GO"
     }
-    else if (this.count > 3 && this.count<=7) {
+    else if (this.count > 3 && this.count <= 7) {
       this.progressStyle.backgroundColor = "orange";
       this.progressStyle.width = percent + "%";
       this.review = "KEEP WORKING HARD"
     }
-    else{
+    else {
       this.progressStyle.backgroundColor = "green";
       this.progressStyle.width = percent + "%";
       this.review = "GOOD WORK"
