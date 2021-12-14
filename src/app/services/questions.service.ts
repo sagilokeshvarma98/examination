@@ -12,13 +12,27 @@ export class QuestionsService {
   constructor(private _HTTP: HttpClient) { }
 
   private _URL: string = "http://localhost:3000/Questions";
-  public noOfQuestions:number = 0;
+  private _UR1: string = "http://localhost:5000/result/"
+  public noOfQuestions: number = 0;
 
-  getNoOfQuestions():Observable<IQuestions[]> {
-   return this._HTTP.get<IQuestions[]>(this._URL)
+  getNoOfQuestions(): Observable<IQuestions[]> {
+    return this._HTTP.get<IQuestions[]>(this._URL)
   }
 
-  getQuestions(questionNo:number):Observable<IQuestions[]> {
-    return this._HTTP.get<IQuestions[]>(this._URL+`?id=${questionNo}`)
+  getQuestions(questionNo: number): Observable<IQuestions[]> {
+    return this._HTTP.get<IQuestions[]>(this._URL + `?id=${questionNo}`)
   }
+
+  postResult(answers:any):Observable<any> {
+    return this._HTTP.post(this._UR1,{"myAnswers": answers});
+  }
+
+  getDefaultAnswers():Observable<any> {
+    return this._HTTP.get<any>("http://localhost:3000/answers")
+  }
+
+  getResultById(id:number):Observable<any> {
+    return this._HTTP.get<any>(this._UR1+id)
+  }
+
 }

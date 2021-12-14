@@ -1,0 +1,29 @@
+* {
+    border: none;
+}
+
+.container-fluid {
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 10%;
+}
+
+.card {
+    background-color: transparent;
+}
+
+input {
+    width: 200px;
+    color: white;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    border-radius: 0%;
+}
+
+input:focus {
+    color: white;
+    box-shadow: none;
+    background-color: transparent;
+}

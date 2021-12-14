@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="text-right">
+        <button class="btn btn-outline-light mt-2 mb-5" routerLink="">
+            TAKE TEST AGAIN
+        </button>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 offset-md-3 offset-sm-0 text-center col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <p class="text text-warning h1" style="margin-top: 10%;">
+                Thanks for taking the test {{username}}
+            </p>
+            <button class="btn btn-outline-dark mt-5" (click)="view = true">VIEW SCORE</button>
+            <div class="mt-2" *ngIf="view">
+                <div class="row">
+                    <div class="col-lg-6 text-right">
+                        <h1 class="text text-warning">{{count}} <span>/ 9</span></h1>
+                    </div>
+                    <div class="col-lg-6 pt-4">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="progressStyle" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text text-center text-light mb-4">
+                    <h3>{{review}}</h3>
+                </div>
+                <ng-container *ngFor="let ques of mainQes">
+                    <div class="card text-left">
+                        <div class="card-header">
+                            {{ques.id}}.{{ques.question}}
+                        </div>
+                        <div class="card-body">
+                            <ol type="a">
+                                <ng-container *ngFor="let option of ques.options; let i = index">
+                                    <input class="form-check-input" type="radio" disabled name="anserrr">
+                                    <span style="display: inline-flex; margin-left: 20px;">
+                                        <li [class.greenText]="ques.answer == i+''"
+                                            [class.redText]="myAnswers[ques.id] != ques.answer && myAnswers[ques.id] == i+''">
+                                            {{option}}
+                                        </li>
+                                    </span> <br>
+                                </ng-container>
+                            </ol>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text text-success" *ngIf="ques.answer == myAnswers[ques.id]">
+                                &#10003; &nbsp; CORRECT
+                            </h6>
+                            <h6 class="text text-danger"
+                                *ngIf="ques.answer != myAnswers[ques.id] && myAnswers[ques.id]">
+                                X &nbsp; WRONG
+                            </h6>
+                            <h6 class="text text-warning" *ngIf="myAnswers[ques.id] == undefined">
+                                NOT ANSWERED
+                            </h6>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

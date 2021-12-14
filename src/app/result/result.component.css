@@ -1,0 +1,17 @@
+.container-fluid {
+    background-color: #8b8a8a;
+    min-height: 100vh;
+}
+
+.redText {
+    color: red;
+}
+
+.progress {
+    height: 10px;
+    width: 100px;
+}
+
+.greenText {
+    color: green;
+}

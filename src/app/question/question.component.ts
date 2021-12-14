@@ -20,24 +20,12 @@ export class QuestionComponent implements OnChanges {
     this.QS.getQuestions(this.questionNo).subscribe(res=>this.question = res[0]);
   }
 
-  tset:string[] = ["1"]
-
-  public radioAnswers:any[] = []
-
-  // getAnswer(id:number, answer:any) {
-  //   this.radioAnswers[id-1] = answer
-  //   console.log(this.radioAnswers);
-    
-    // let obj = {
-    //   answerId: id-1,
-    //   answer: answer-1
-    // }
-    // this.answers.emit(obj)
-  // }
-
-  getAnswer(test:any) {
-    console.log(test.target.value);
-    
+  public testAnswers:any = {}
+  
+  getAnswer(test:any,id:number) {
+    this.testAnswers[id] = test.target.value;
+    console.log(this.testAnswers);
+    this.answers.emit(this.testAnswers)
   }
 
 }

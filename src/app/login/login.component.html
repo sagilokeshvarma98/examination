@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-4 col-lg-4">
+            <div class="card">
+                <div class="card-header text text-center">
+                    <label for="user" class="text text-light"><b>ENTER YOUR NAME</b></label>
+                </div>
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="offset-3">
+                            <input class="form-control" ngModel #username='ngModel' value="" type="text" name="username" id="username">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text text-center">
+                        <button class="btn btn-outline-light" [disabled]="!username.value"  [routerLink]="'home/'+username.value">
+                            TAKE OUR TEST.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

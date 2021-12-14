@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <app-navbar [username]="username" (timeUp)="postResult()"></app-navbar>
+    <div class="row">
+        <div class="offset-2 col-6 questionDiv">
+            <div class="quesComponent col-12 mb-5">
+                <app-question [questionNo]="questionNo" (answers)="getAnswersArray($event)"></app-question>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <button class="btn btn-outline-success" *ngIf="questionNo!=1"
+                        (click)="questionNo = questionNo - 1">
+                        < &nbsp; PREVIOUS</button>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <button class="btn btn-outline-success mr-5" *ngIf="questionNo < questions.length"
+                        (click)="questionNo = questionNo + 1"> > &nbsp; NEXT</button>
+                </div>
+            </div>
+            <div class="submitDiv text-right">
+                <button class="btn btn-success" (click)="postResult()">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+        <div class="offset-2 col-2 questionNumberBox">
+            <ng-container *ngFor="let ele of questions">
+                <div class="text-center" [class.bgQues]="answerObject[ele.id]" (click)="questionNo = ele.id">
+                    {{ele.id}}
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

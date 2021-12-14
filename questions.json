@@ -1,101 +1,112 @@
 {
-    "Questions":[
-       {
-          "id":1,
-          "question":"Which of the following statement is correct for AngularJS?",
-          "options":[
-             "AngularJS is an HTML framework",
-             "AngularJS is a Java framework",
-             "AngularJS is a JavaScript framework",
-             "AngularJS is a SQL framework"
-          ],
-          "answer":"2"
-       },
-       {
-          "id":2,
-          "question":"On which of the Architectural pattern AngularJS is based?",
-          "options":[
-             "Observer Pattern",
-             "Decorator pattern",
-             "MVC Architecture pattern",
-             "MVVM Architectural pattern"
-          ],
-          "answer":"3"
-       },
-       {
-          "id":3,
-          "question":"AngularJS is perfect for?",
-          "options":[
-             "SPAs",
-             "MPAs",
-             "DPAs",
-             "CPAs"
-          ],
-          "answer":"0"
-       },
-       {
-          "id":4,
-          "question":"Which of the following is the correct syntax for writing AngularJS expressions?",
-          "options":[
-             "(expression)",
-             "{{expression}}",
-             "{{{expression}}}",
-             "[expression]"
-          ],
-          "answer":"b"
-       },
-       {
-          "id":5,
-          "question":"Do AngularJS provide reusable components?",
-          "options":[
-             "Yes",
-             "No"
-          ],
-          "answer":"0"
-       },
-       {
-          "id":6,
-          "question":"Which of the following directive is used to bind the application data to the HTML view in AngularJS?",
-          "options":[
-             "ng-app directive",
-             "ng-model directive",
-             "ng-bind directive",
-             "ng-init directive"
-          ],
-          "answer":"2"
-       },
-       {
-          "id":7,
-          "question":" Which of the following syntax is correct for applying multiple filters in AngularJS?",
-          "options":[
-             "{{ expression | filter1 | filter2 | ... }}",
-             "{{ expression | {filter1} | {filter2} | ... }}",
-             "{{ expression - {filter1} - {filter2} - ... }}",
-             "{{ {filter1} | {filter2} | ...-expression}}"
-          ],
-          "answer":"0"
-       },
-       {
-          "id":8,
-          "question":"Which of the following statement is true about the lowercase filter?",
-          "options":[
-             "The lowercase filter converts a text to lower case text.",
-             "The lowercase filter is a function that takes text as input.",
-             "Both of the above.",
-             "None of the above."
-          ],
-          "answer":"0"
-       },
-       {
-          "id":9,
-          "question":"Which of the following statement is true about $dirty flag?",
-          "options":[
-             "$dirty flag is used to state that value has been changed.",
-             "$dirty flag is used to state that the form has invalid data.",
-             "Both of the above.",
-             "None of the above."
-          ],
-          "answer":"0"
-       }
-    ]
- }
+  "Questions": [
+    {
+      "id": 1,
+      "question": "Which of the following statement is correct for AngularJS?",
+      "options": [
+        "AngularJS is an HTML framework",
+        "AngularJS is a Java framework",
+        "AngularJS is a JavaScript framework",
+        "AngularJS is a SQL framework"
+      ],
+      "answer": "2"
+    },
+    {
+      "id": 2,
+      "question": "On which of the Architectural pattern AngularJS is based?",
+      "options": [
+        "Observer Pattern",
+        "Decorator pattern",
+        "MVC Architecture pattern",
+        "MVVM Architectural pattern"
+      ],
+      "answer": "3"
+    },
+    {
+      "id": 3,
+      "question": "AngularJS is perfect for?",
+      "options": [
+        "SPAs",
+        "MPAs",
+        "DPAs",
+        "CPAs"
+      ],
+      "answer": "0"
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is the correct syntax for writing AngularJS expressions?",
+      "options": [
+        "(expression)",
+        "{{expression}}",
+        "{{{expression}}}",
+        "[expression]"
+      ],
+      "answer": "1"
+    },
+    {
+      "id": 5,
+      "question": "Do AngularJS provide reusable components?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "answer": "0"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following directive is used to bind the application data to the HTML view in AngularJS?",
+      "options": [
+        "ng-app directive",
+        "ng-model directive",
+        "ng-bind directive",
+        "ng-init directive"
+      ],
+      "answer": "2"
+    },
+    {
+      "id": 7,
+      "question": " Which of the following syntax is correct for applying multiple filters in AngularJS?",
+      "options": [
+        "{{ expression | filter1 | filter2 | ... }}",
+        "{{ expression | {filter1} | {filter2} | ... }}",
+        "{{ expression - {filter1} - {filter2} - ... }}",
+        "{{ {filter1} | {filter2} | ...-expression}}"
+      ],
+      "answer": "0"
+    },
+    {
+      "id": 8,
+      "question": "Which of the following statement is true about the lowercase filter?",
+      "options": [
+        "The lowercase filter converts a text to lower case text.",
+        "The lowercase filter is a function that takes text as input.",
+        "Both of the above.",
+        "None of the above."
+      ],
+      "answer": "0"
+    },
+    {
+      "id": 9,
+      "question": "Which of the following statement is true about $dirty flag?",
+      "options": [
+        "$dirty flag is used to state that value has been changed.",
+        "$dirty flag is used to state that the form has invalid data.",
+        "Both of the above.",
+        "None of the above."
+      ],
+      "answer": "0"
+    }
+  ],
+  "answers": {
+    "1": 2,
+    "2": 3,
+    "3": 0,
+    "4": 1,
+    "5": 0,
+    "6": 2,
+    "7": 0,
+    "8": 0,
+    "9": 0
+  }
+}
