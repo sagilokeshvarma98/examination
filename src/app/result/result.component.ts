@@ -14,7 +14,6 @@ export class ResultComponent implements OnInit {
   constructor(public url: ActivatedRoute, private _AS: QuestionsService) { }
 
   public myAnswers: any;
-  public correctAnswers: any;
   public count: number = 0;
   public view: boolean = false;
   mainQes: IQuestions[] = []
@@ -26,12 +25,10 @@ export class ResultComponent implements OnInit {
       this._AS.getResultById(res.id).subscribe(res => {
         this.myAnswers = res.myAnswers;
         console.log(this.myAnswers);
-        this._AS.getDefaultAnswers().subscribe(res => {
-          this.correctAnswers = res
-          console.log("dfghjk", this.correctAnswers);
-          this._AS.getNoOfQuestions().subscribe(res => this.mainQes = res)
+        this._AS.getNoOfQuestions().subscribe(res => {
+          this.mainQes = res
           this.calculateResult()
-        });
+        })
       });
     });
   }
@@ -42,14 +39,10 @@ export class ResultComponent implements OnInit {
   }
 
   calculateResult() {
-    // this.mainQes.filter((res:IQuestions)=>{
-    //   if(res.answer == this.myAnswers[`${res.id}`])
-    //     this.count++;
-    // })
-    // console.log(this.count);
-    for (let key in this.correctAnswers)
-      if (this.correctAnswers[key] == this.myAnswers[key])
+    this.mainQes.filter((x: IQuestions) => {
+      if (x.answer == this.myAnswers[`${x.id}`])
         this.count++;
+    })
     let percent = (this.count / 9) * 100;
     console.log(percent);
     if (this.count <= 3) {

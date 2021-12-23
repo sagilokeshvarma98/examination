@@ -7,8 +7,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <button class="btn btn-outline-success" *ngIf="questionNo!=1"
-                        (click)="questionNo = questionNo - 1">
+                    <button class="btn btn-outline-success" *ngIf="questionNo!=1" (click)="questionNo = questionNo - 1">
                         < &nbsp; PREVIOUS</button>
                 </div>
                 <div class="col-lg-6 text-right">
@@ -23,11 +22,13 @@
             </div>
         </div>
         <div class="offset-2 col-2 questionNumberBox">
-            <ng-container *ngFor="let ele of questions">
-                <div class="text-center" [class.bgQues]="answerObject[ele.id]" (click)="questionNo = ele.id">
-                    {{ele.id}}
-                </div>
-            </ng-container>
+            <div class="row">
+                <ng-container *ngFor="let ele of questions">
+                    <div class="col-4 text-center" [class.bgQues]="answerObject[ele.id]" (click)="questionNo = ele.id">
+                        {{ele.id}}
+                    </div>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

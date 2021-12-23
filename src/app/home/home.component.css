@@ -13,17 +13,21 @@
 }
 
 .questionNumberBox {
-    height: 92vh;
+    height:max-content;
     border: 1px solid greenyellow;
 }
 
-.questionNumberBox div {
-    color: rgb(156, 156, 55);
-    height: 10%;
-    padding: 15px 0px 0px 0px;
+.questionNumberBox .row {
+    padding: 30px;
 }
 
-.questionNumberBox div:hover {
+.questionNumberBox .row div {
+    color: rgb(99, 99, 60);
+    height: 10%;
+    padding: 15px;
+}
+
+.questionNumberBox .row div:hover {
     font-size: 20px;
     color: red;
 }
